@@ -23,7 +23,7 @@ class UserController extends Controller
 
     public function update(Request $request){
 
-        $this->service->update($request->all());
+        $this->service->update($request->user(), $request->all());
         return response()->json(['data'=>['message'=>'Your data has been updated.']],200);
 
     }

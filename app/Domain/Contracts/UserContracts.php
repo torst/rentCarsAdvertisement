@@ -17,6 +17,6 @@ interface UserContracts
 
     public function findByEmail($email);
 
-    public function update(array $dados);
+    public function update(User $user, array $dados);
 
 }

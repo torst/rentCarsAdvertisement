@@ -36,9 +36,9 @@ class UserService
 
     }
 
-    public function update(array $dados)
+    public function update(User $user, array $dados)
     {
-        return $this->userRepository->update($dados);
+        return $this->userRepository->update($user, $dados);
 
     }
 

@@ -34,15 +34,10 @@ class UserRepository implements UserContracts
         return $user;
     }
 
-    public function update(array $dados)
+    public function update(User $user, array $dados)
     {
-
-        $user = (new User())->fill($dados);
-        $usuario = $this->findByEmail($user->email);
-
-        $usuario->setAttribute('name', $user->name);
-
-        $usuario->update();
-        return $usuario;
+        $user->fill($dados);
+        $user->update();
+        return $user;
     }
 }
