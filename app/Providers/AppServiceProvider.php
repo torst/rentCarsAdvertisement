@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Domain\Contracts\AdvertisementContracts;
 use App\Domain\Contracts\UserContracts;
+use App\Domain\Repository\AdvertisementRepository;
 use App\Domain\Repository\UserRepository;
 use App\Models\User;
 use App\Observer\UserObserver;
@@ -28,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(UserContracts::class, UserRepository::class);
-//        $this->app->bind(AdvertisementContract::class, AdvertisementRepository::class);
+        $this->app->bind(AdvertisementContracts::class, AdvertisementRepository::class);
 //        $this->app->bind(PictureContract::class, PictureRepository::class);
     }
 

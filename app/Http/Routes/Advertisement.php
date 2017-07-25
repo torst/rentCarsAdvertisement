@@ -9,7 +9,6 @@
 namespace App\Http\Routes;
 
 
-use Faker\Guesser\Name;
 use Illuminate\Routing\Router;
 
 class Advertisement
@@ -17,7 +16,7 @@ class Advertisement
 {
     public function map(Router $router){
 
-        $router->post('advertisements', 'AdvertisementController@create');
+        $router->post('advertisements', 'AdvertisementController@create')->middleware('auth:api');
 
 //        $router->post('login', 'LoginController@login');
 //

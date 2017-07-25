@@ -9,7 +9,6 @@
 namespace App\Http\Routes;
 
 
-use Faker\Guesser\Name;
 use Illuminate\Routing\Router;
 
 class Auth
